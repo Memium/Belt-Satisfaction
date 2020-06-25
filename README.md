@@ -1,2 +1,3 @@
-# Adjustable-Exoskeletons
-A factorio mod that adds a slider to control your exoskeletons.
+# Belt-Satisfaction
+A factorio mod that allows you to see the resource satisfaction of your belts.
+Basically bottleneck for belts.
