@@ -1,0 +1,11 @@
+{
+    "name": "belt_satisfaction",
+    "version": "1.1.0",
+    "title": "Belt Satisfaction",
+    "author": "xelantro",
+    "contact": "dev@memium.de",
+    "homepage": "https://memium.de",
+    "factorio_version": "0.18",
+    "dependencies": ["base >= 0.18"],
+    "description": "This mod allows to see the satisfaction of a belt."
+}
