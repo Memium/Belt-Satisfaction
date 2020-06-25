@@ -1,5 +1,5 @@
 script.on_event(defines.events.on_player_joined_game, function(event)
-	global.max_equipment_movement_speed_bonus = global.max_equipment_movement_speed_bonus or {}
+	--[[global.max_equipment_movement_speed_bonus = global.max_equipment_movement_speed_bonus or {}
 	global.sliderval = global.sliderval or {}
 	--global.slider = global.slider or {}
 	
@@ -45,6 +45,16 @@ script.on_event(defines.events.on_player_joined_game, function(event)
 	--for i,s in pairs(slider.children_names) do player.print(s) end
 	armorcal(event.player_index)
 	movement_bonus_update(event.player_index)
+	]]--
+end)
+
+script.on_event(defines.events.on_gui_opened, function(event)
+	if event.gui_type == defines.gui_type.entity then
+		if type(event.entity) == "TransportBeltConnectable" and not event.element == nil then
+			--event.element. --https://lua-api.factorio.com/latest/LuaGuiElement.html
+			game.get_player(event.player_index).print((#event.entity.get_transport_line(1) + #event.entity.get_transport_line(2))/8)
+		end
+	end
 end)
 
 script.on_event(defines.events.on_gui_value_changed, function(event)
