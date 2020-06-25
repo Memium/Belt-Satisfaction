@@ -1,6 +1,6 @@
 script.on_event(defines.events.on_player_joined_game, function(event)
 	game.get_player(event.player_index).print("Loaded", {r=255, g=30, b=35})
-	frm = game.get_player(event.player_index).gui.left.add{type="frame", name="beltsatisfactionfrm", caption="Satisfaction"}
+	frm = game.get_player(event.player_index).gui.left.add{type="frame", name="beltsatisfactionfrm", caption="Satisfaction", style="bsf_buttons"}
 	prb = frm.add{type="progressbar", name="beltsatisfactionlbl"}
 	update = false
 	frm.visible = false
@@ -21,7 +21,7 @@ end)
 
 script.on_event(defines.events.on_tick, function(event)
 	if update then
-		prb.value = (prb.value+(#L1 + #L2)/8)/2
+		prb.value = ( prb.value + (#L1+#L2)/8 )/2
 	end
 end)
 --[[if event.tick % 10 == 0 then
